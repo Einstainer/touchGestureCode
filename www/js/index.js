@@ -19,18 +19,14 @@ $(document).on("pagecreate",function(){
     });
     
     $('#pageone').on("swipeleft",function(){
-        a=true;
         $('#swipetext').on("swipeleft",function(){
+            a=true;
             $(this).css('color', 'green');
         });
-        a=false;
-    });
-
-    
-    $('#pageone').on("swipeleft",function(){
         if(a == false){
     	       $.mobile.navigate( "#pagetwo" );
         }
+        a=false;
     });
     
     $('#pagetwo').on("swipeleft",function(){
