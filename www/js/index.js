@@ -19,13 +19,13 @@ $(document).on("pagecreate",function(){
             $('#swipetext').on("swipeleft",function(){
                $(this).css('color', 'green');
             });
-        }
+        };
         
         else{
             $('pageone').on("swipeleft",function(){
     	       $.mobile.navigate( "#pagetwo" );
             });
-        }
+        };
     });
     
     $('#pagetwo').on("swipe",function(){
@@ -37,13 +37,13 @@ $(document).on("pagecreate",function(){
             $('#swipetext').on("swipeleft",function(){
                $(this).css('color', 'green');
             });
-        }
+        };
         
         else{
             $('pagetwo').on("swiperight",function(){
     	       $.mobile.navigate( "#pageone" );
             });
-        }
+        };
     });
 
 });
