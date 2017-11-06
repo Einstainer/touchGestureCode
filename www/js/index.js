@@ -8,19 +8,20 @@ $(document).on("pagecreate",function(){
 	$('#taptext').on("tap",function(){
     	$(this).css('color', 'red');
  	}); 
+    
+    $('#pageone').on("swiperight",function(){
+        $('#swipetext').on("swiperight",function(){
+            $(this).css('color', 'blue');
+        });
+    }
 
     
-    $('#pageone').on("swipe",function(){
-        if($.event.special.swipe.start.origin == $('#swipetext')){
-            $('#swipetext').on("swiperight",function(){
-    	       $(this).css('color', 'blue');
-            });
-            
+    $('#pageone').on("swipeleft",function(){
+        if($.event.special.swipeleft.start.origin == $('#swipetext')){
             $('#swipetext').on("swipeleft",function(){
                $(this).css('color', 'green');
             });
         }
-        
         else{
             $('pageone').on("swipeleft",function(){
     	       $.mobile.navigate( "#pagetwo" );
@@ -28,14 +29,16 @@ $(document).on("pagecreate",function(){
         }
     });
     
-    $('#pagetwo').on("swipe",function(){
-        if($.event.special.swipe.start.origin == $('#swipetext')){
+    $('#pagetwo').on("swipeleft",function(){
+        $('#swipetext').on("swipeleft",function(){
+            $(this).css('color', 'green');
+        });
+    }
+    
+    $('#pagetwo').on("swiperight",function(){
+        if($.event.special.swiperight.start.origin == $('#swipetext')){
             $('#swipetext').on("swiperight",function(){
     	       $(this).css('color', 'blue');
-            });
-            
-            $('#swipetext').on("swipeleft",function(){
-               $(this).css('color', 'green');
             });
         }
         
