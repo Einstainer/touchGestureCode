@@ -36,17 +36,13 @@ $(document).on("pagecreate",function(){
     });
     
     $('#pagetwo').on("swiperight",function(){
-        if($.event.special.swipe.start.origin == $("#swipetext")){
-            $('#swipetext').on("swiperight",function(){
-    	       $(this).css('color', 'blue');
-            });
-        }
-        
-        else{
-            $('pagetwo').on("swiperight",function(){
+        $('#swipetext').on("swiperight",function(){
+            a=true;
+            $(this).css('color', 'blue');
+        });
+        if(a == false){
     	       $.mobile.navigate( "#pageone" );
-            });
         }
+        a=false;
     });
-
 });
