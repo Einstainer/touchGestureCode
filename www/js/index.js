@@ -20,11 +20,12 @@ $(document).on("pagecreate","#pageone",function(){
             $(this).css('color', 'green');
         }
         
-        elseif($.event.special.swipe.start.origin != $('#swipetext')){
+        else if($.event.special.swipe.start.origin != $('#swipetext')){
             $.mobile.navigate( "#pagetwo" );
         }
     });
 });
+
 
 $(document).on("pagecreate","#pagetwo",function(){
   
