@@ -2,8 +2,7 @@
 
 $(document).on("pagecreate",function(){
     
-    var Boolean a=false;
-
+    var a=false;
     
   	$('#tapholdtext').on("taphold",function(){
     	$(this).hide();
