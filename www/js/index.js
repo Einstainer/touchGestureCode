@@ -28,10 +28,8 @@ $(document).on("pagecreate",function(){
 
     
     $('#pageone').on("swipeleft",function(){
-        if(a== false){
-            $('pageone').on("swipeleft",function(){
+        if(a == false){
     	       $.mobile.navigate( "#pagetwo" );
-            });
         }
     });
     
