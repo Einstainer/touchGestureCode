@@ -1,7 +1,6 @@
 <!-- For more info on jQuery Mobile,  touch gestures and other useful events see : http://api.jquerymobile.com/category/events/ -->
 
-$(document).on("pagecreate","#pageone",function(){
-  
+$(document).on("pagecreate",function(){
   	$('#tapholdtext').on("taphold",function(){
     	$(this).hide();
  	});                       
@@ -11,46 +10,36 @@ $(document).on("pagecreate","#pageone",function(){
  	}); 
 
     
-    $('#swipetext').on("swiperight",function(){
-    	$(this).css('color', 'blue');
-  	});
-    
-    $('#pageone').on("swipeleft",function(){
+    $('#pageone').on("swipe",function(){
         if($.event.special.swipe.start.origin == $('#swipetext')){
-            $(this).css('color', 'green');
+            $('#swipetext').on("swiperight",function(){
+    	       $(this).css('color', 'blue');
+            });
+            
+            $('#swipetext').on("swipeleft",function(){
+               $(this).css('color', 'green');
+            });
         }
         
-        else if($.event.special.swipe.start.origin != $('#swipetext')){
+        else{
             $.mobile.navigate( "#pagetwo" );
         }
     });
-});
-
-
-$(document).on("pagecreate","#pagetwo",function(){
-  
-  	$('#tapholdtext').on("taphold",function(){
-    	$(this).hide();
- 	});                       
-
-	$('#taptext').on("tap",function(){
-    	$(this).css('color', 'red');
- 	}); 
-
-	$('#swipetext').on("swipeleft",function(){
-    	$(this).css('color', 'green');
-  	});
-
     
-    $('#pageone').on("swiperight",function(){
+    $('#pagetwo').on("swipe",function(){
         if($.event.special.swipe.start.origin == $('#swipetext')){
-            $(this).css('color', 'green');
+            $('#swipetext').on("swiperight",function(){
+    	       $(this).css('color', 'blue');
+            });
+            
+            $('#swipetext').on("swipeleft",function(){
+               $(this).css('color', 'green');
+            });
         }
         
         else{
             $.mobile.navigate( "#pageone" );
         }
     });
-
 
 });
