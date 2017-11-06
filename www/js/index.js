@@ -13,7 +13,7 @@ $(document).on("pagecreate",function(){
         $('#swipetext').on("swiperight",function(){
             $(this).css('color', 'blue');
         });
-    }
+    });
 
     
     $('#pageone').on("swipeleft",function(){
@@ -33,7 +33,7 @@ $(document).on("pagecreate",function(){
         $('#swipetext').on("swipeleft",function(){
             $(this).css('color', 'green');
         });
-    }
+    });
     
     $('#pagetwo').on("swiperight",function(){
         if($.event.special.swiperight.start.origin == $('#swipetext')){
