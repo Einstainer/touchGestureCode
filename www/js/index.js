@@ -1,6 +1,10 @@
 <!-- For more info on jQuery Mobile,  touch gestures and other useful events see : http://api.jquerymobile.com/category/events/ -->
 
 $(document).on("pagecreate",function(){
+    
+    var Boolean a=false;
+
+    
   	$('#tapholdtext').on("taphold",function(){
     	$(this).hide();
  	});                       
@@ -14,15 +18,18 @@ $(document).on("pagecreate",function(){
             $(this).css('color', 'blue');
         });
     });
+    
+    $('#pageone').on("swipeleft",function(){
+        a=true;
+        $('#swipetext').on("swipeleft",function(){
+            $(this).css('color', 'green');
+        });
+        a=false;
+    });
 
     
     $('#pageone').on("swipeleft",function(){
-        if($.event.special.swipe.start.origin == $("#swipetext")){
-            $('#swipetext').on("swipeleft",function(){
-               $(this).css('color', 'green');
-            });
-        }
-        else{
+        if(a== false){
             $('pageone').on("swipeleft",function(){
     	       $.mobile.navigate( "#pagetwo" );
             });
