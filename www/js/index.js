@@ -20,7 +20,7 @@ $(document).on("pagecreate","#pageone",function(){
             $(this).css('color', 'green');
         }
         
-        else{
+        elseif($.event.special.swipe.start.origin != $('#swipetext')){
             $.mobile.navigate( "#pagetwo" );
         }
     });
