@@ -22,7 +22,9 @@ $(document).on("pagecreate",function(){
         }
         
         else{
-            $.mobile.navigate( "#pagetwo" );
+            $('pageone').on("swipeleft",function(){
+    	       $.mobile.navigate( "#pagetwo" );
+            });
         }
     });
     
@@ -38,7 +40,9 @@ $(document).on("pagecreate",function(){
         }
         
         else{
-            $.mobile.navigate( "#pageone" );
+            $('pagetwo').on("swiperight",function(){
+    	       $.mobile.navigate( "#pageone" );
+            });
         }
     });
 
