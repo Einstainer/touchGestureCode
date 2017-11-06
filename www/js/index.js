@@ -17,7 +17,7 @@ $(document).on("pagecreate",function(){
 
     
     $('#pageone').on("swipeleft",function(){
-        if($.event.special.swipe.start.origin == $('#swipetext')){
+        if($.event.special.swipeleft.start.origin == $('#swipetext')){
             $('#swipetext').on("swipeleft",function(){
                $(this).css('color', 'green');
             });
@@ -36,7 +36,7 @@ $(document).on("pagecreate",function(){
     });
     
     $('#pagetwo').on("swiperight",function(){
-        if($.event.special.swipe.start.origin == $('#swipetext')){
+        if($.event.special.swiperight.start.origin == $('#swipetext')){
             $('#swipetext').on("swiperight",function(){
     	       $(this).css('color', 'blue');
             });
